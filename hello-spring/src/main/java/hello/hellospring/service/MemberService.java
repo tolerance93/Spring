@@ -7,9 +7,16 @@ import hello.hellospring.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+// command + shift + T: 테스트케이스 자동생
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    // command + N: constructor 자동생
+    // memberRepository를 외부에서 넣어줌. Dependency Injection
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     public Long join(Member member) {
         // 같은 이름이 있는 중복 회원 X
