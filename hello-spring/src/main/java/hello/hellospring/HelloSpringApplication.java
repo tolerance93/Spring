@@ -1,3 +1,4 @@
+//하위 패키지들은 다 스프링에 등록됨
 package hello.hellospring;
 
 import org.springframework.boot.SpringApplication;
