@@ -12,6 +12,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+// 스프링 컨테이너 없이 단위테스트를 수행하는 훈련을 하자!. 진짜 좋은 테스트는 단위테스트!
 class MemberServiceTest {
 
     MemberService memberService;
