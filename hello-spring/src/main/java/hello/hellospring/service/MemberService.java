@@ -26,7 +26,6 @@ public class MemberService {
         // 같은 이름이 있는 중복 회원 X
         // command + option + v: 리턴 자동완
         validateDuplicateMember(member);
-
         memberRepository.save(member);
         return member.getId();
     }
