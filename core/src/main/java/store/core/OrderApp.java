@@ -3,16 +3,16 @@ package store.core;
 import store.core.member.Grade;
 import store.core.member.Member;
 import store.core.member.MemberService;
-import store.core.member.MemberServiceImpl;
 import store.core.order.Order;
 import store.core.order.OrderService;
-import store.core.order.OrderServiceImpl;
 
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
