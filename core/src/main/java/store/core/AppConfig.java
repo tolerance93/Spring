@@ -2,6 +2,7 @@ package store.core;
 
 import store.core.discount.DiscountPolicy;
 import store.core.discount.FixDiscountPolicy;
+import store.core.discount.RateDiscountPolicy;
 import store.core.member.MemberRepository;
 import store.core.member.MemberService;
 import store.core.member.MemberServiceImpl;
@@ -24,7 +25,9 @@ public class AppConfig {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
+    // 사용 영역의 코드는 손댈 필요 없이 구성 영역의 코드변경만하면 된다.
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        //return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
