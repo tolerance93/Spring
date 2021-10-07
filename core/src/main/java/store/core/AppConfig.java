@@ -12,6 +12,7 @@ import store.core.member.MemoryMemberRepository;
 import store.core.order.OrderService;
 import store.core.order.OrderServiceImpl;
 
+//바이트 코드를 조작하는 CGLIB으로 싱글톤 보장
 @Configuration
 public class AppConfig {
 

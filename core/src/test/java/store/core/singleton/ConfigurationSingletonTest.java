@@ -31,7 +31,14 @@ public class ConfigurationSingletonTest {
 
         assertThat(memberService.getMemberRepository()).isSameAs(memberRepository);
         assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
+    }
 
+    @Test
+    void configurationDeep() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);
 
+        //AppConfig가 아니라 AppConfig를 상속한 CGLIB객체를 사용하여 싱글톤이 가능하게 한다.
+        System.out.println("bean = " + bean.getClass());
     }
 }
