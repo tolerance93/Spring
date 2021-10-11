@@ -10,6 +10,7 @@ public class MemberServiceImpl implements MemberService {
     // 추상화에도 구체화에도 의존함. 문제!!!!! DIP 위반
     private final MemberRepository memberRepository;
 
+    //불변.
     @Autowired //ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
