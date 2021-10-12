@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import store.core.annotation.MainDiscountPolicy;
 import store.core.discount.DiscountPolicy;
 import store.core.member.Member;
 import store.core.member.MemberRepository;
@@ -33,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
     //생성자에는 왠만하면 값을 다 채워넣어야한다는 관례가 있음
     //생성자가 1개일때는 Autowired생략 가능
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
